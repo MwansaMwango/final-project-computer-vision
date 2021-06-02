@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizzWatch Demo</title>
+     <!-- Website Theme -->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.0/dist/superhero/bootstrap.min.css"
+   />
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   />
+       <!-- Our CSS -->
+       <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+</head>
+<body>
+        <!-- Navbar -->
+        <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+
+            <!-- Go Back Arrow -->
+            <script> function goBack() { window.history.back(); }</script> 
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:history.back()" ><i class="fas fa-arrow-left"></i></a>
+                </li>
+            </ul>
+      
+            <div class="container">
+              <a href="../" class="navbar-brand">
+                <img
+                  src="../static/image/logo_icon3.svg"
+                  width="50"
+                  height="25"
+                  class="d-inline-block align-top"
+                  alt=""
+                  style="filter: invert(100)"
+                />
+                BizzWatch</a
+              >
+            </div>
+          </div>
+          <!-- End of Navbar -->
+          <div class="container-fluid">
+
+            <div class="row text-center">             
+              <div class="col-sm-12">
+                <h2>Person Counter</h2>
+                <div id="bar" class="text-center"></div>
+              </div>
+            </div>
+
+            <div class="row">             
+              <div class="col-sm-12">
+                <h2>Upload Data</h2>
+              </div>
+            </div>
+
+
+
+          </div>
+    
+
+
+    <script src="{{ url_for('static', filename='js/demo.js') }}"></script>
+</body>
+</html>
+<script>
