@@ -32,7 +32,7 @@
       href="{{ url_for('static', filename='/image/favicon.ico') }}"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -173,9 +173,11 @@
         <!-- Preview -->
         <div class="col-sm-12 col-md-8">
           <legend class="text-primary">Preview | Frames</legend>
-          <video width="640" height="264" controls>
+          <video width="640" autoplay height="264" controls>
+            <source src="https://bizzwatchbucket.s3-ap-southeast-2.amazonaws.com/timelapse_barbershop_1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+
           <!-- Carousel - Frame Preview -->
           <div id="carouselExampleCaptions" class="carousel slide d-block w-50" data-ride="carousel" >
             <ol class="carousel-indicators">
@@ -237,17 +239,14 @@
             <i class="fas fa-chart-bar"></i>
             PREDICT - People Count Prediction & Analysis
           </h2>
-
-          
-
-
+  
           <div id="detectAccuracy" class="text-center">
             Count / Ground-Truth Label Vs Frame
           </div>
           <div id="" class="text-center">
-            People count prediction over the next 7 days
+            Actual vs. Predicted People Count
           </div>
-          <div id="" class="text-center">Busiest Days</div>
+          <div id="" class="text-center">Busiest Hours/Days</div>
           <div id="" class="text-center">Important Features</div>
           <!-- <div id="" class="text-center">Sales/Staff vs Time</div> -->
         </div>

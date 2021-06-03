@@ -5,6 +5,11 @@ from flask.templating import render_template_string
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
 from flask_pymongo import PyMongo
 import random
+#Required to navigate between different modules contained in different folders
+# import sys
+# sys.path.append('..')
+
+from detect import detect
 
 # Create an instance of our Flask app.
 # Static folder has files inside reachable for everyone.
@@ -20,49 +25,8 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/electric_vehicles")
 # Set route - displays landing page
 @app.route("/")
 def index():
-    return render_template("index.html")
-
-# Set route - displays Global electricity production
-@app.route("/global-emissions")
-def globalEmissions():
-    return render_template("electricity_production.html")
-
-# Set route - displays Global charge station
-@app.route("/global-charge-stations")
-def globalChargeStations():
-    return render_template("ev_charging_stations.html")
-
-# Set route - displays US EV Model Sales
-@app.route("/race-chart")
-def raceChart():
-    return render_template("race_chart.html")
-
-# Set route - displays app demo
-@app.route("/demo")
-def demo():
-    return render_template("demo.html")
-
-# Get US EV Sales data from MongoDB database
-@app.route("/api/v1/resources/us-sales", methods = ['GET'])
-def api_us_sales():
-    all_sales = {}
-  # After you first set of iterations over documents the cursor is used up. It's a read-once container.
-  # Convert to list to avoid this.
-    us_ev_sales_coll = list(mongo.db.us_ev_sales.find({}))
-
-    for year in range(2011,2020):
-        vehicle_sales_dict_list = []
-        for document in us_ev_sales_coll: 
-            if document['Vehicle'] != 'Total': #exclude the total column
-                vehicle_sales_dict = {}
-                vehicle_sales_dict["vehicle"] = document['Vehicle']
-                vehicle_sales_dict["sales"] = document[str(year)]
-                vehicle_sales_dict_list.append(vehicle_sales_dict)
-        all_sales[year] = vehicle_sales_dict_list
-
-    response = jsonify(all_sales)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    detect()
+    return 
 
 # Get Tesla Sales data from MongoDB database
 @app.route("/api/v1/resources/tesla-sales", methods = ['GET'])
