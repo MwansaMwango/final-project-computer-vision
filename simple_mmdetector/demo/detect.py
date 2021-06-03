@@ -2,14 +2,14 @@
 import sys
 sys.path.append('..')
 
-from models.detectors import create_detector
+from ..models.detectors import create_detector
 import torch
 import torchvision
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-def detect():
+def detectObj():
         
     # comment if already downloaded pre-trained weights
     # download pretrained mmdetection model from model zoo
@@ -81,5 +81,5 @@ def detect():
                 plt.axis("off")
                 plt.imshow(im)
                 
-if __name__ == "__main__":
-    detect()
+# if __name__ == "__main__":
+#     detect()
