@@ -45,26 +45,5 @@ def api_file_downloads():
         return send_from_directory(directory='.', filename="result_frame_0.jpg", as_attachment=True, cache_timeout=0)
     except Exception as e:
         return str(e)
-
-
-
-# Get Tesla Sales data from MongoDB database
-# @app.route("/api/v1/resources/tesla-sales", methods = ['GET'])
-# def api_tesla_sales():
-#   # After you first set of iterations over documents the cursor is used up. It's a read-once container.
-#   # Convert to list to avoid this.
-#     tesla_sales_coll = list(mongo.db.tesla_production_sales.find({}))
-#     qtr_tesla_sales_dict_list = []
-#     for document in tesla_sales_coll:
-#         qtr_tesla_sales_dict = {}
-#         qtr_tesla_sales_dict["Quarter"] = document['Quarter']
-#         qtr_tesla_sales_dict["Total_Sales"] = document['Total_Sales']
-#         qtr_tesla_sales_dict_list.append(qtr_tesla_sales_dict)
-
-#     response = jsonify(qtr_tesla_sales_dict_list)
-#     response.headers.add('Access-Control-Allow-Origin', '*')
-#     return response
-
-
 if __name__ == "__main__":
     app.run(debug=True)

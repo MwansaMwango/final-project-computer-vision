@@ -1,14 +1,13 @@
 /* Global Plotly */
-var url = `api/v1/resources/tesla-sales`;
+var url = "api/detect";
 
 function buildPlot() {
   d3.json(url).then(function (data) {
     console.log("Data", data);
-    tesla_sales_data = data;
     // Create your Bar plot trace.
     var trace1 = {
-      x: tesla_sales_data.map((doc) => doc.Quarter),
-      y: tesla_sales_data.map((doc) => doc.Total_Sales),
+      x: data.map((doc) => doc.time),
+      y: data.map((doc) => doc.count),
       type: "bar",
       //   orientation: "h",
       marker: {
@@ -17,7 +16,7 @@ function buildPlot() {
       },
     };
     //Create the data array for our plot
-    var data = [trace1];
+    var dataTrace = [trace1];
     //Define our plot layout
     // var layout = {
 
@@ -29,7 +28,7 @@ function buildPlot() {
 
     var layout = {
       title: {
-        text: "Tesla Quarterly Sales & Production",
+        text: "People Count Over Time",
         font: {
           family: "Courier New, monospace",
           size: 24,
@@ -39,7 +38,7 @@ function buildPlot() {
       },
       xaxis: {
         title: {
-          text: "Quarter / Year",
+          text: "Time(sec)",
           font: {
             family: "Courier New, monospace",
             size: 18,
@@ -51,7 +50,7 @@ function buildPlot() {
 
       yaxis: {
         title: {
-          text: "Electric Vehicles Sold",
+          text: "People Count",
           font: {
             family: "Courier New, monospace",
             size: 18,
@@ -61,12 +60,12 @@ function buildPlot() {
         },
       },
     //   width: 1200,
-      height: 800,
+      height: 400,
       plot_bgcolor: "#fefcf7",
       paper_bgcolor: "#dce1e2",
     };
     //Plot the chart to a div tag with id "bar"
-    Plotly.newPlot("bar", data, layout);
+    Plotly.newPlot("bar", dataTrace, layout);
   });
 }
 
