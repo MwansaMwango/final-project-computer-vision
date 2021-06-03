@@ -31,7 +31,11 @@ def demo():
  # Set route - displays demo page
 @app.route("/api/detect")
 def detect():
-    detectObj()
+    results = detectObj()
+    print(results)
+    response = jsonify(results)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 # Get Tesla Sales data from MongoDB database
 # @app.route("/api/v1/resources/tesla-sales", methods = ['GET'])
