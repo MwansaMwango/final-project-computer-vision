@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, jsonify
+from flask import Flask, render_template, redirect, request, jsonify, send_from_directory, send_file
 import pprint
 import time
 from flask.templating import render_template_string
@@ -10,7 +10,7 @@ from simple_mmdetector.demo.detect import detectObj
 
 # Create an instance of our Flask app.
 # Static folder has files inside reachable for everyone.
-app = Flask(__name__) 
+app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/electric_vehicles")
@@ -22,20 +22,31 @@ app = Flask(__name__)
 # Set route - displays landing page
 @app.route("/")
 def index():
-   return render_template("index.html")
- 
- # Set route - displays demo page
+    return render_template("index.html")
+
+# Set route - displays demo page
 @app.route("/demo")
 def demo():
     return render_template("demo.html")
- # Set route - displays demo page
-@app.route("/api/detect")
-def detect():
+
+# Set route - displays demo page
+@app.route("/api/detect", methods=['GET'])
+def api_detect():
     results = detectObj()
     print(results)
     response = jsonify(results)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
+
+# Download result files
+@app.route("/api/file-downloads", methods=['GET'])
+def api_file_downloads():
+    try:
+        return send_from_directory(directory='.', filename="result_frame_0.jpg", as_attachment=True, cache_timeout=0)
+    except Exception as e:
+        return str(e)
+
+
 
 # Get Tesla Sales data from MongoDB database
 # @app.route("/api/v1/resources/tesla-sales", methods = ['GET'])
@@ -44,15 +55,16 @@ def detect():
 #   # Convert to list to avoid this.
 #     tesla_sales_coll = list(mongo.db.tesla_production_sales.find({}))
 #     qtr_tesla_sales_dict_list = []
-#     for document in tesla_sales_coll: 
+#     for document in tesla_sales_coll:
 #         qtr_tesla_sales_dict = {}
 #         qtr_tesla_sales_dict["Quarter"] = document['Quarter']
 #         qtr_tesla_sales_dict["Total_Sales"] = document['Total_Sales']
 #         qtr_tesla_sales_dict_list.append(qtr_tesla_sales_dict)
-    
-#     response = jsonify(qtr_tesla_sales_dict_list) 
+
+#     response = jsonify(qtr_tesla_sales_dict_list)
 #     response.headers.add('Access-Control-Allow-Origin', '*')
 #     return response
+
 
 if __name__ == "__main__":
     app.run(debug=True)
