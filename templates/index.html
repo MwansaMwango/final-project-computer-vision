@@ -32,7 +32,10 @@
       href="{{ url_for('static', filename='image/favicon.ico') }}"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -41,7 +44,7 @@
     <!-- Navbar -->
     <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
       <div class="container">
-        <a href="../" class="navbar-brand">
+        <a href="/" class="navbar-brand">
           <img
             src="../static/image/bw-logo-white.png"
             width="50"
@@ -65,23 +68,30 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/demo"><i class="fas fa-tv"></i> Demo</a>
+              <a class="nav-link" href="/demo"
+                ><i class="fas fa-tv"></i> Demo</a
+              >
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                data-toggle="dropdown" 
+                data-toggle="dropdown"
                 href="#"
                 id="themes"
                 ><i class="fas fa-table"></i> Project <span class="caret"></span
               ></a>
               <div class="dropdown-menu" aria-labelledby="themes">
-                <a class="dropdown-item" href="..">Datasets</a>
-                <a class="dropdown-item" href=".."
-                  >Challenges</a
+                <a
+                  class="dropdown-item"
+                  target="_blank"
+                  href="https://raw.githubusercontent.com/MwansaMwango/final-project/main/data/data.csv"
+                  >Dataset</a
                 >
-                <a class="dropdown-item" href=".."
-                  >Future Improvements</a
+                <a
+                  class="dropdown-item"
+                  target="_blank"
+                  href="https://github.com/MwansaMwango/final-project/blob/main/data/randomForestRegressor.ipynb"
+                  >Notebook</a
                 >
               </div>
             </li>
@@ -89,6 +99,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
+                target="_blank"
                 href="https://github.com/MwansaMwango/final-project"
                 ><i class="fab fa-github-square"></i> Github</a
               >
@@ -103,31 +114,30 @@
     <div
       class="jumbotron text-center"
       style="
-        background-image: url(..);
+        background-image: url(../static/image/banner_cv2.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 65vh;
+        height: 50vh;
       "
     >
       <div class="container">
-        <h1
+        <div
           class="
             text-center
             align-text-bottom
-            display-4
             animate__animated animate__backInDown
+            display-5
           "
         >
-          <br />Helping businesses watch every transaction...
-        </h1>
-        <button
-          id="statBtn"
-          role="button"
-          class="btn btn-primary animate__animated animate__pulse"
-        >
-          Click Here for Proof
-        </button>
-        <h4 id="statText" class="text-white text-center pt-2"></h4>
+          <img
+            src="../static/image/bizzwatch-logo.png"
+            class="img-fluid"
+            alt="logo"
+          />
+          <h3 class="text-primary">
+            Helping businesses watch every transaction...
+          </h3>
+        </div>
       </div>
     </div>
     <!-- End of Jumbotron -->
@@ -137,12 +147,14 @@
           <i class="fa fa-quote-left fa-pull-left"></i>
           <blockquote class="blockquote text-center">
             <span class="mb-0 display-4"
-              >Tired of internal theft with no time to review CCTV?</span
+              >Tired of internal theft?<br />No time to review CCTV?</span
             >
             <i class="fa fa-pull-right fa-quote-right"></i>
             <small>
               <footer class="blockquote-footer">
-                Yes of course, over 80% of internet traffic is video!
+                Yes of course, over
+                <span class="lead text-primary">80%</span> of internet traffic
+                is video!
                 <cite title="Source Title">Cisco(2019)</cite>
                 <br />
               </footer>
@@ -153,269 +165,171 @@
       <hr />
       <!-- Intro -->
       <div class="row">
-        <h2>Motivation</h2>
-        <p class="text-justify">
-          CCTV is often the goto solution for employee theft. Business owners
-          can't be present at all times, ot lack resources to watch hours of
-          video footage detect fraud. Employee theft continues to hinder profit
-          margins for business owners, especially in most developing countries
-          where average <b>annual</b> income is under US$ 3,000!
+        <h2>Current Situation</h2>
+        <h5 class="text-justify">
+          CCTV has been the goto solution to prevent employee or internal theft.
+          Business managers can't be present at all times and are too busy to
+          review hours of video footage. Employee theft continues to hinder
+          profit margins for business owners, especially in most
+          <span class="text-primary"
+            >developing countries with average annual income is under
+            <span class="lead">US$ 3,000!</span></span
+          >
           <a href="https://www.worlddata.info/average-income.php"
             >(World Data, 2019)</a
           >
-        </p>
+        </h5>
       </div>
       <!-- End of into -->
       <hr />
       <!-- EV Market Share vs. All Cars Section -->
       <div class="row text-justify">
-        <h2>Internal Theft</h2>
+        <h2>How bad is internal theft?</h2>
         <!-- EV Market Share Insight -->
 
-        <p class="text-justify">
-          40% of Australian companies are uncovering internal fraud and
-          according to Price Waterhouse Coopers detection rates are higher in
-          Australia than the rest of the world.
-        </p>
-        <p class="text-justify">
-          An estimate from The American Society of Employers is that 20% of
-          every dollar earned by a U.S. company is lost to employee theft.
-        </p>
-        <p class="text-justify">
-          According to The U.S. Chamber of Commerce 75% of employees steal from
-          the workplace and most do so repeatedly. Small businesses with less
-          than 100 employees had the highest median loss at $150,000.
-          (Association of Certified Fraud Examiners)
-        </p>
-        <p class="text-justify">
-          Only 16% of companies call the police to launch an employee theft
-          investigation. (National Federation of Independent Business)
-        </p>
+        <h5 class="text-justify">
+          <span class="text-primary">
+            <span class="display-4">40%</span> of Australian companies are
+            uncovering internal fraud</span
+          >
+          and according to Price Waterhouse Coopers detection rates are higher
+          in Australia than the rest of the world.
+        </h5>
+        <h5 class="text-justify">
+          An estimate from The American Society of Employers is that
+          <span class="text-primary">
+            <span class="display-4">20%</span> of every dollar earned by a U.S.
+            company is lost to employee theft.
+          </span>
+        </h5>
+        <h5 class="text-justify">
+          According to The U.S. Chamber of Commerce
+          <span class="text-primary">
+            <span class="display-4">75%</span> of employees steal from the
+            workplace and most do so repeatedly.
+          </span>
+          Small businesses with less than 100 employees had the highest median
+          loss at $150,000. (Association of Certified Fraud Examiners)
+        </h5>
+        <h5 class="text-justify">
+          Only
+          <span class="text-primary">
+            <span class="display-4">16%</span> of companies call the police
+          </span>
+          to launch an employee theft investigation. (National Federation of
+          Independent Business)
+        </h5>
 
         <span id="market-share-plot" class="mr-5"></span>
-        <!-- Data Filter -->
-        <fieldset class="form-group">
-          <legend><i class="fas fa-filter"></i>Data Filters</legend>
-          <fieldset class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input
-                  type="radio"
-                  class="form-check-input"
-                  name="optionsRadios"
-                  id="optionsRadios1"
-                  value="top5"
-                />
-                Top 5
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input
-                  type="radio"
-                  class="form-check-input"
-                  name="optionsRadios"
-                  id="optionsRadios2"
-                  value="bottom5"
-                />
-                Bottom 5
-              </label>
-            </div>
-          </fieldset>
-          <fieldset>
-            <div class="form-group">
-              <select id="selCountry-marketShare" class="custom-select">
-                <option selected="">Select Country(All)</option>
-              </select>
-            </div>
-          </fieldset>
-        </fieldset>
-      </div>
-
-      <hr />
-      <!-- Solution -->
-      <div class="row justify-content-center">
-        <h2>Solution</h2>
-        <p class="text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ab eum
-          minus nam, at enim aut, eveniet earum facere obcaecati quia adipisci
-          similique hic, voluptatem odio! Obcaecati minima aliquid nostrum.
-        </p>
-        <img
-          src=".."
-          alt=""
-          class="justify-content-center"
-        />
-      </div>
-
-      <div class="row">
-        <div class="col-md-3">
+        <hr />
+        <!-- Solution -->
+        <div class="row justify-content-center">
+          <h2>Solution</h2>
+          <h5 class="text-justify">
+            BizzWatch is a solution that leverages computer vision and data
+            analytics to detect, audit and predict revenue or customer demand.
+          </h5>
           <img
-            src=".."
+            src="../static/image/objdet.jpeg"
             alt=""
-            class="img-fluid img-thumbnail"
-          />
-        </div>
-        <div class="col-md-9 text-justify">
-          <h3>Computer Vision - Person Detection</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
-            similique soluta, maxime repellat, sed esse, pariatur alias quos qui
-            vero aut odio maiores nobis aliquid facilis unde sequi doloremque
-            eos?
-          </p>
-        </div>
-      </div>
-      <hr />
-
-      <div class="row">
-        <div class="col-md-3">
-          <img
-            src=".."
-            alt=""
-            class="img-fluid"
-          />
-          <img
-            src=".."
-            alt=""
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-9 text-justify">
-          <h3>Random Forest Regression - Sales/Customer Prediction</h3>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in,
-            vel unde facilis, officiis eveniet, eos repudiandae nisi esse saepe
-            quisquam fugiat exercitationem expedita. Reiciendis amet enim odit
-            nemo est.
-            <b>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, cum!
-            </b>
-          </p>
-          <p>
-            <b>Wrights Law</b> Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Excepturi deleniti odit iste sunt quasi eligendi
-            nam illo earum praesentium officia. Vitae, assumenda. Omnis ipsa
-            neque doloremque laboriosam ratione id quidem.
-          </p>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-3">
-          <img
-            src=".."
-            alt=""
-            class="img-fluid img-thumbnail"
+            class="justify-content-center img-fluid my-3"
           />
         </div>
 
-        <div class="col-md-9 text-justify">
-          <h3>Data Analytics - Visualizations</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            optio quidem error voluptatem. Ratione at nesciunt consectetur est
-            cum sapiente blanditiis non sit assumenda, fugit ipsa corrupti quo
-            libero soluta!
-          </p>
-          <h3>What did we learn?</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-            dolorem fuga incidunt molestias! Iste, hic?
-          </p>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-3">
-          <img
-            src=".."
-            alt=""
-            class="img-fluid img-thumbnail"
-          />
-          <img
-            src=".."
-            alt=""
-            class="img-fluid img-thumbnail"
-          />
-        </div>
-        <div class="col-md-9 text-justify"></div>
-      </div>
-      <hr />
-
-      <div class="row">
-        <div class="col-md-3">
-          <img
-            src=".."
-            alt=""
-            class="img-fluid img-thumbnail"
-          />
-        </div>
-        <div class="col-md-9 text-justify"></div>
-      </div>
-      <!-- Breaking the barriers to adoption -->
-      <hr />
-      <div class="row text-justify">
-        <h2>Minimum Viable Product (MVP) WebApp Functionality</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
-          quidem impedit molestias quibusdam dolorum voluptate.
-        </p>
-
-        <p>
-          Upload Video Data
-          <a href="/race-chart">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
-            commodi?
-          </a>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam
-          necessitatibus consequatur accusantium ullam mollitia quia voluptatem
-          unde iste dolore dolor! Doloribus deserunt rerum suscipit quasi eaque.
-          Vel quod accusantium iste!
-        </p>
-      </div>
-      <!-- Conclusion -->
-      <hr />
-      <div class="row text-justify">
-        <h2>Future Improvements</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis
-          veritatis quia expedita mollitia inventore numquam tenetur, blanditiis
-          cumque dolores, vero culpa labore et dolore vel id ab sapiente
-          laudantium.
-        </p>
-        <div>
-          <img
-            src=".."
-            style="height: 400"
-            alt=""
-            class="img-fluid img-thumbnail"
-          />
-        </div>
-      </div>
-      <p>
-        <small
-          >Sources:
-          <a
-            href="https://github.com/MwansaMwango/final-project/tree/main/data"
-            >Github Project Data Files</a
-          >
-        </small>
-      </p>
-
-      <!-- Footer -->
-      <footer id="footer">
         <div class="row">
-          <div class="col-lg-12">
-            <ul class="list-unstyled">
-              <li class="float-lg-right"><a href="#top">Back to top</a></li>
-            </ul>
+          <div class="col-md-3">
+            <img
+              src="../static/image/fraud-detection.jpg"
+              alt=""
+              class="img-fluid img-thumbnail"
+            />
+          </div>
+          <div class="col-md-9 text-justify">
+            <h3 class="text-primary">Fraud Detection</h3>
+            <h5>
+              Object detection is used to count people or products and compared
+              to ground-truth or revenue, consumption, etc.
+            </h5>
           </div>
         </div>
-      </footer>
-    </div>
+        <hr />
 
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              src="../static/image/predictive_analytics.jpeg"
+              alt=""
+              class="img-fluid img-thumbnail"
+            />
+          </div>
+          <div class="col-md-9 text-justify">
+            <h3 class="text-primary">Sales/Customer Prediction</h3>
+            <h5>
+              If we can count number of people or products over time, we can
+              predict sales and understand influencing factors form external
+              variables or features.
+            </h5>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              src="../static/image/resource_optimisation.jpg"
+              alt=""
+              class="img-fluid img-thumbnail"
+            />
+          </div>
+
+          <div class="col-md-9 text-justify">
+            <h3 class="text-primary">Resource Optimisation</h3>
+            <h5>
+              Understanding the peaks and troughs of demand behaviour allows
+              optimised resource allocation of staff, goods and services to
+              better serve the clients.
+            </h5>
+          </div>
+        </div>
+        <hr />
+        <hr />
+
+        <!-- Functionality -->
+        <hr />
+        <div class="row justify-content-center">
+          <h2>Minimum Viable Product (MVP) WebApp Functionality</h2>
+          <h5>
+            The ability to detect objects accurately and fast is key to an
+            effective product. Thereafter, aggregation and correlation with
+            other features for prediction can be deployed.
+          </h5>
+          <div>
+            <a href="/demo">
+              <button class="btn btn-primary">Demo</button></a
+            >
+          </div>
+        </div>
+        <p>
+          <small
+            >Sources:
+            <a
+              href="https://github.com/MwansaMwango/final-project/tree/main/data"
+              >Github Project Data Files</a
+            >
+          </small>
+        </p>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <div class="row">
+            <div class="col-lg-12">
+              <ul class="list-unstyled">
+                <li class="float-lg-right"><a href="#top">Back to top</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
