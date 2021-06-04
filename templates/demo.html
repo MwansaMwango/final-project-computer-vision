@@ -310,7 +310,7 @@
             PREDICT - Analysis & Forecast
           </h2>
         </div>
-
+        <!-- Customers per Unit Time -->
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <div class="text-center">
@@ -320,27 +320,26 @@
           </div>
 
           <div class="col-sm-12 col-md-6">
-            <h3 class="">Rationale</h3>
+            <h4 class="text-primary">
+              Rationale: More people...means more sales!
+            </h4>
             <p>
               A video is essentially and ensemble of images or frames played
               fast enough (24 images per second) to fool the eye into perceiving
               it as motion. The same principle is applied for inference to count
               the number of people in video.
             </p>
-              <p>
-
-              We do not need to check 24 images
-              and count the number of people in period of 1 second! Therefore,
-              we can skip some frames and only count people say, every 10mins.
-              This is more practical, compute resource and memory efficient.
-              Customer count over time can be used to correlate busy or quiet
-              hours, days or months.
+            <p>
+              We do not need to check 24 images and count the number of people
+              in period of 1 second! Therefore, we can skip some frames and only
+              count people say, every 10mins. This is more practical, compute
+              resource and memory efficient. Customer count over time can be
+              used to correlate busy or quiet hours, days or months.
             </p>
             <p>
-            For the purpose of the demo and due to
-              minimum compute resources, the timeslot used is in seconds. This
-              graph can be overlaid with sales/revenue and investigate the
-              correlation.
+              For the purpose of the demo and due to minimum compute resources,
+              the timeslot used is in seconds. This graph can be overlaid with
+              sales/revenue and investigate the correlation.
             </p>
             <p>
               Generally, the more people you have in the barbershop, the more
@@ -353,7 +352,92 @@
             </p>
           </div>
         </div>
-        <!-- End of col 1 -->
+        <!-- End of Customers per Unit Time -->
+        <hr />
+        <!-- Corr Heatmap -->
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="text-center">
+              Feature Correlation Heatmap
+              <span id="corr-heatmap" class="d-block">
+                <img
+                  src="../static/image/plots/feature_corr.jpg"
+                  width="80%"
+                  alt=""
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <h4 class="text-primary">
+              Gym Case Study: People counted every 10mins
+            </h4>
+            <p>
+              Due to lack of real data for this specific application, we have
+              taken a very similar dataset to which our analsis can be applied.
+              We take a case study dataset done to figure out the best time to
+              go to the gym from a dataset that includes the count of people in
+              the gym every 10mins. This data presents a reasonalble to
+              comparison to our count of people in a barbershop over time.
+              Additionally in includes more commonly used feature sets such:
+            </p>
+            <ul>
+              <li>Day of Week</li>
+              <li>Hour</li>
+              <li>Month</li>
+              <li>Is Weekend?</li>
+              <li>Is Holiday?</li>
+              <li>Temperature / Weather</li>
+              <li>Is start of semester</li>
+              <li>Is during of semester</li>
+            </ul>
+            <p>
+              A feature correlation heatmap is presented to show how correlated
+              the features are. The label of interes here is the number of
+              peaple. As can be seen, with respect to number of people,
+              timestamp, temperature and during semester have a higher
+              correlation.
+            </p>
+            <p>
+              For the purpose of the demo and due to minimum compute resources,
+              the timeslot used is in seconds. This graph can be overlaid with
+              sales/revenue and investigate the correlation.
+            </p>
+          </div>
+        </div>
+        <!-- End of Correlation Heatmap -->
+        <hr />
+        <!-- Corr Heatmap -->
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="text-center">
+              Busy Times
+              <span id="busy-heatmap" class="d-block">
+                <img
+                  src="../static/image/plots/busy_times.jpg"
+                  width="80%"
+                  alt=""
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <h4 class="text-primary">Gym Case Study: Peak Times</h4>
+            <p>
+              The data shows that the peak hours are 17-19:00hrs during weekdays
+              with Monday and Tuesday having 2hr lag with later start times
+              around 8am. Not many night owls. Average number of people is
+              around 30 at any points in time.
+            </p>
+            <p>
+              Similarly for our barbershop, this can be used to benchmark and
+              estimate customer surge, staffing and revenue expected.
+            </p>
+          </div>
+        </div>
+        <!-- End of Correlation Heatmap -->
       </div>
       <!-- End of Analysis -->
     </div>
