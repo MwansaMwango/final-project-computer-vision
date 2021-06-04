@@ -3,7 +3,7 @@ import pprint
 import time
 from flask.templating import render_template_string
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
-from flask_pymongo import PyMongo
+# from flask_pymongo import PyMongo
 import random
 
 from simple_mmdetector.demo.detect import detectObj
