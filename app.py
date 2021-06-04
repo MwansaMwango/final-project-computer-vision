@@ -1,11 +1,4 @@
 from flask import Flask, render_template, redirect, request, jsonify, send_from_directory, send_file
-import pprint
-import time
-from flask.templating import render_template_string
-# Import our pymongo library, which lets us connect our Flask app to our Mongo database.
-# from flask_pymongo import PyMongo
-import random
-
 from simple_mmdetector.demo.detect import detectObj
 
 # Create an instance of our Flask app.
