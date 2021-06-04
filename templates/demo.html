@@ -303,7 +303,7 @@
       </div>
       <hr />
       <!-- PREDICT -->
-      <div class="row">
+      <div class="row text-justify">
         <div class="col-12">
           <h2 class="text-center">
             <i class="fas fa-chart-bar"></i>
@@ -314,7 +314,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <div class="text-center">
-              Customers Per Unit Time
+              Customers Per Unit Time (Click <a href="/api/detect">'Detect'</a>)
               <span id="bar" class="d-block"></span>
             </div>
           </div>
@@ -408,7 +408,7 @@
         </div>
         <!-- End of Correlation Heatmap -->
         <hr />
-        <!-- Corr Heatmap -->
+        <!-- Busy Times Heatmap -->
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <div class="text-center">
@@ -426,10 +426,10 @@
           <div class="col-sm-12 col-md-6">
             <h4 class="text-primary">Gym Case Study: Peak Times</h4>
             <p>
-              The data shows that the peak hours are 17-19:00hrs during weekdays
-              with Monday and Tuesday having 2hr lag with later start times
+              The data shows that the peak hours are 1700-19:00hrs during weekdays
+              with Monday and Tuesday having a 2hr lag with later start times
               around 8am. Not many night owls. Average number of people is
-              around 30 at any points in time.
+              around 30 at any point in time.
             </p>
             <p>
               Similarly for our barbershop, this can be used to benchmark and
@@ -437,7 +437,110 @@
             </p>
           </div>
         </div>
-        <!-- End of Correlation Heatmap -->
+        <!-- End of Busy Times Heatmap -->
+        <hr />
+        <!-- Model -->
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="text-center">
+              Random Forest Regression Model
+              <span id="n-estimators" class="d-block">
+                <img
+                  src="../static/image/plots/rfr_n_estimators.jpg"
+                  width="80%"
+                  alt=""
+                  class="img-thumbnail"
+                />
+                <hr />
+                <img
+                  src="../static/image/plots/rfr_model_accuracy.jpg"
+                  width="80%"
+                  alt=""
+                  class="img-thumbnail"
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <h4 class="text-primary">
+              Gym Case Study: Random Forest Regression Model
+            </h4>
+            <p>
+              Random Forest Regression is a supervised learning algorithm that
+              uses ensemble learning method for regression. Ensemble learning
+              method is a technique that combines predictions from multiple
+              machine learning algorithms to make a more accurate prediction
+              than a single model (gitConnected, 2020).
+            </p>
+            <p>
+              This algorithm was used as it achieved the highest accuracy score
+              of about 91% with n_estimators = 180. With this accuracy, we can
+              predict the number of people expected given the other features as
+              inputs.
+            </p>
+            <span class="d-block text-center">
+              <img
+                src="../static/image/rfr_explained.svg"
+                width="80%"
+                alt=""
+                class="img-thumbnail"
+              />
+            </span>
+          </div>
+        </div>
+        <!-- End of Model -->
+        <hr />
+        <!-- Model -->
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="text-center">
+              Feature Importance
+              <span id="feat-importance" class="d-block">
+                <img
+                  src="../static/image/plots/feature_importance.jpg"
+                  width="80%"
+                  alt=""
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <h4 class="text-primary">
+              Gym Case Study: What are the determining factors?
+            </h4>
+            <p>
+              Random Forest models allow us to extract the what features
+              determin the outcome or model prediction. In this case, the number
+              of people and therefore the revenue. The weight of each feature is
+              summarised. with time of the day being the biggest factor. But
+              more succintly, the temperature! How is this so? This can be
+              explained by the fact that temperature is low at nightime when
+              people are sleeping and not in the gym. Next important features
+              are 'during semester' and 'is weekend' which are expected.
+            </p>
+            <h4 class="text-primary">Conclusion</h4>
+            <p>
+              From a business perspective, more complex models with suite of
+              features would result in a more insightfull model other than
+              people count. This will soon be the case with the rise of Internet
+              of Things and sensors everywhere and in everthing. But the now,
+              this concept leverages the existing CCTV camera video footable
+              that is more widely available.
+            </p>
+            <p>
+              BizzWatch showcases a potential solution to internal theft by
+              applying computer vision machine learning (pretrained
+              retinanet_r101_fpn) to DETECT the number of customers in videos
+              compared to received revenue or number of customers. Furthermore,
+              PREDICTION of revenue using supervised machine learning random
+              forest regression model was developed for a case study with accuracy of 91%.
+            </p>
+          </div>
+        </div>
+        <!-- End of Model -->
+        <hr />
       </div>
       <!-- End of Analysis -->
     </div>

@@ -39,7 +39,7 @@ def api_detect():
 @app.route("/api/file-downloads", methods=['GET'])
 def api_file_downloads():
     try:
-        return send_from_directory(directory='.', filename="result_frame_0.jpg", as_attachment=True, cache_timeout=0)
+        return send_from_directory(directory='./static/image/results', filename="result_frame_0.jpg", as_attachment=True, cache_timeout=0)
     except Exception as e:
         return str(e)
 if __name__ == "__main__":

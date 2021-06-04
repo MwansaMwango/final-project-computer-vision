@@ -52,10 +52,10 @@ def detectObj():
 
     for frame in frameList:
         
-        imageFilePath = frame["frameName"]
+        imageFileName = frame["frameName"]
        
         with torch.no_grad():
-            result = retina.detect(imageFilePath)
+            result = retina.detect(imageFileName)
         res = []
 
         # Look for cars [2], person [0] in COCO dataset, with threshold between 0.3-0.5 depending on setting
@@ -65,7 +65,7 @@ def detectObj():
          
         if len(res) > 0:
             
-            im = cv2.imread(imageFilePath)
+            im = cv2.imread('static/image/frames/'+imageFileName)
             for r in res:
                 cv2.rectangle(im, (r[0], r[1]), (r[2], r[3]), (0, 255, 255), 3)
                 cv2.putText(im, "Person", (r[0]-3, r[1]-3), cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 255), 3)
@@ -76,8 +76,8 @@ def detectObj():
 
             #print text in frame of total count
             cv2.putText(im, "Total Count: " + str(len(res)), (15, 30), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 0), 3)
-            # Save imageFilePath with inference
-            cv2.imwrite('static/image/results/result_' + imageFilePath,im)
+            # Save imageFileName with inference
+            cv2.imwrite('static/image/results/result_' + imageFileName,im)
 
             #Plot image in notebook
             # im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
