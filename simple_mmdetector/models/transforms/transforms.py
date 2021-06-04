@@ -1,4 +1,3 @@
-import numpy as np
 from PIL import Image
 import torchvision.transforms.functional as T
 from torchvision.transforms import Resize, Compose, Lambda, ToTensor, Normalize

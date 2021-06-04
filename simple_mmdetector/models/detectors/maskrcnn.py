@@ -1,5 +1,3 @@
-import torch
-import torchvision
 import torchvision.models.detection.mask_rcnn as mask_rcnn
 import torchvision.transforms as transforms
 from PIL import Image

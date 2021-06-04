@@ -22,3 +22,5 @@ typing-extensions==3.10.0.0
 Werkzeug==2.0.1
 wincertstore==0.2
 zipp==3.4.1
+PIL==7.2.0
+https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl 
