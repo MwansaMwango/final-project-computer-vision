@@ -22,5 +22,6 @@ Werkzeug==2.0.1
 wincertstore==0.2
 zipp==3.4.1
 -f https://download.pytorch.org/whl/torch_stable.html
-torch==1.6.0+cpu
-torchvision==0.7.0+cpu
+torch== 1.8.1+cpu
+torchvision==0.9.1+cpu
+
