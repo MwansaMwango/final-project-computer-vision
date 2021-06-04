@@ -17,10 +17,11 @@ Pillow==8.2.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
 six==1.16.0
-torchvision==0.9.1
 typing-extensions==3.10.0.0
 Werkzeug==2.0.1
 wincertstore==0.2
 zipp==3.4.1
 PIL==7.2.0
-https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl 
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.6.0+cpu
+torchvision==0.7.0+cpu
