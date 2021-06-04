@@ -12,9 +12,6 @@ from simple_mmdetector.demo.detect import detectObj
 # Static folder has files inside reachable for everyone.
 app = Flask(__name__)
 
-# Use PyMongo to establish Mongo connection
-# mongo = PyMongo(app, uri="mongodb://localhost:27017/electric_vehicles")
-
 #################################################
 # Flask Routes
 #################################################
@@ -29,7 +26,7 @@ def index():
 def demo():
     return render_template("demo.html")
 
-# Set route - displays demo page
+# Run detect
 @app.route("/api/detect", methods=['GET'])
 def api_detect():
     results = detectObj()

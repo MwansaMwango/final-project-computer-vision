@@ -1,3 +1,4 @@
+#MMDetection is an open source object detection toolbox based on PyTorch. SimpleMMDetection allows inference on CPU
 #Required to navigate between different modules contained in different folders
 import sys
 sys.path.append('..')
@@ -38,7 +39,8 @@ def detectObj():
         if ret == False:
             break
         if i % framesToSkip == 0: # Save one frame every 120
-            cv2.imwrite('frame_'+str(i)+'.jpg',frame)
+            #Save frame
+            cv2.imwrite('static/image/frames/frame_'+str(i)+'.jpg',frame)
             frameTimestamp = int(i / fps) #must be int not float
             frameImg = 'frame_'+str(i)+'.jpg'
             frameList.append({"time": frameTimestamp, "frameName":frameImg})
@@ -49,9 +51,7 @@ def detectObj():
     print ("Frame List:", frameList)
 
     for frame in frameList:
-
-        # Assign time and image name
-        timestamp = frame["time"]
+        
         imageFilePath = frame["frameName"]
        
         with torch.no_grad():
@@ -77,14 +77,14 @@ def detectObj():
             #print text in frame of total count
             cv2.putText(im, "Total Count: " + str(len(res)), (15, 30), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 0), 3)
             # Save imageFilePath with inference
-            cv2.imwrite('result_' + imageFilePath,im)
+            cv2.imwrite('static/image/results/result_' + imageFilePath,im)
 
             #Plot image in notebook
+            # im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
             #convert image to color
-            im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
-            plt.figure(figsize=(10,11))
-            plt.axis("off")
-            plt.imshow(im)
+            # plt.figure(figsize=(10,11))
+            # plt.axis("off")
+            # plt.imshow(im)
     return frameList
 
 if __name__ == "__main__":

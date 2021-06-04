@@ -12,5 +12,5 @@
           d3.select("#statBtn").text("Need More Facts?");   
       })
     }
-    // Listen for random stat button click event
+    // Listen for detect button click event
     randomStatBtn.on("click", handleClick);

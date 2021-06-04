@@ -32,7 +32,10 @@
       href="{{ url_for('static', filename='/image/favicon.ico') }}"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/style.css') }}"
+    />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -78,13 +81,10 @@
           </h2>
         </div>
       </div>
-
-      <!-- Input Parameters -->
+      <!-- DETECT -->
       <div class="row">
-        <div
-          class="col-sm-12 col-md-4"
-          style="border-right: 1px solid whitesmoke"
-        >
+        <!-- Input Parameters -->
+        <div class="col-sm-12 col-md-3">
           <form>
             <fieldset>
               <legend class="text-primary">Step1: Video Parameters</legend>
@@ -160,132 +160,117 @@
                 <input class="form-control" type="file" id="businessData" />
               </fieldset>
               <a href="/api/detect">
-
-                <button
-                type="submit"
-                class="btn btn-primary"
-                data-nlok-ref-guid="664acf63-5715-4c8a-ca59-8b839c78a6af"
-                >
-                Detect
-              </button>
-            </a>
+                <button id="detectBtn" type="submit" class="btn btn-primary">
+                  Detect
+                </button>
+              </a>
             </fieldset>
           </form>
         </div>
         <!-- Preview -->
-        <div class="col-sm-12 col-md-8">
-          <legend class="text-primary">Preview | Frames</legend>
-          <video width="640" autoplay height="264" controls>
-            <source src="https://bizzwatchbucket.s3-ap-southeast-2.amazonaws.com/timelapse_barbershop_1.mp4" type="video/mp4">
+        <div class="col-sm-12 col-md-9">
+          <legend class="text-primary">Preview</legend>
+          <!-- Option form AWS Stored video -->
+          <!-- <video width="640" autoplay height="264" controls>
+            <source
+              src="https://youtu.be/2aleOg4Dy10"
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
-          </video>
+          </video> -->
+          <iframe
+            width="600"
+            height="340"
+            src="https://www.youtube.com/embed/2aleOg4Dy10"
+            title="YouTube video player"
+            frameborder="1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
 
-          <!-- Carousel - Frame Preview -->
-          <div id="carouselExampleCaptions" class="carousel slide d-block w-50" data-ride="carousel" >
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="../static/image/frames/frame_2040.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="../static/image/frames/frame_1920.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="../static/image/frames/frame_2160.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-          <!-- End of Carousel -->
+          <hr />
           <!-- Results -->
           <div>
             <p class="h4 text-primary">Results Summary</p>
-            <p>Progress:</p>
-            <p>Total Count:</p>
-            <p>Total Frames:</p>
-            <p class="lead">Download files:</p>
-            <div class="container" align="left">
-              <a href="/api/file-downloads" target="blank"><button class="btn btn-primary">Download!</button></a>
-             </div>
-            <p><i class="fas fa-file-excel"></i> People-Count.csv</p>
-            <p><i class="fas fa-file-image"></i> Images.zip</p>
+            <!-- Carousel - Frame Preview -->
+            <div class="row mx-auto">
+              <img
+                src="../static/image/results/result_frame_0.jpg"
+                width="30%"
+                class="img-thumbnail rounded float-left"
+                alt="..."
+              />
+              <img
+                src="../static/image/results/result_frame_960.jpg"
+                width="30%"
+                class="img-thumbnail rounded float-right"
+                alt="..."
+              />
+              <img
+                src="../static/image/results/result_frame_1920.jpg"
+                width="30%"
+                class="img-thumbnail rounded float-right"
+                alt="..."
+              />
+            </div>
+            <!-- End of Carousel -->
+            <div class="my-2">
+              <a href="/api/file-downloads" target="blank"
+                ><button class="btn btn-primary">Download frames</button></a
+              >
+            </div>
           </div>
           <!-- End of Results -->
         </div>
       </div>
       <hr />
-      <!-- Analysis -->
-      <div class="row text-center">
-        <div class="col-sm-12">
-          <h2>
+      <!-- PREDICT -->
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">
             <i class="fas fa-chart-bar"></i>
-            PREDICT - People Count Prediction & Analysis
+            PREDICT - Analysis & Forecast
           </h2>
-  
-          <div id="detectAccuracy" class="text-center">
-            Count / Ground-Truth Label Vs Frame
-          </div>
-          <div id="" class="text-center">
-            Actual vs. Predicted People Count
-            <span id="bar"></span>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div id="detectAccuracy" class="text-center">
+              Count / Ground-Truth Label Vs Frame
+            </div>
+            <div id="" class="text-center">
+              Actual vs. Predicted People Count
+              <span id="bar" class="d-block"></span>
+            </div>
+
+            <div id="" class="text-center">Busiest Hours/Days</div>
+            <div id="" class="text-center">Important Features</div>
+            <!-- <div id="" class="text-center">Sales/Staff vs Time</div> -->
           </div>
 
-          <div id="" class="text-center">Busiest Hours/Days</div>
-          <div id="" class="text-center">Important Features</div>
-          <!-- <div id="" class="text-center">Sales/Staff vs Time</div> -->
+          <div class="col-sm-12 col-md-6">
+            <h3 class="">Insight</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              necessitatibus voluptates quibusdam mollitia, amet porro.
+            </p>
+          </div>
         </div>
         <!-- End of col 1 -->
       </div>
       <!-- End of Analysis -->
     </div>
     <!-- End of Input Parameters -->
-    <script type="text/javascript">
-      (function localFileVideoPlayer() {
-        "use strict";
-        var playSelectedFile = function (event) {
-          var file = this.files[0];
-          var URL = window.URL || window.webkitURL;
-          var fileURL = URL.createObjectURL(file);
-          var videoNode = document.querySelector("video");
-          videoNode.src = fileURL;
-        };
-        var inputNode = document.querySelector("input");
-        inputNode.addEventListener("change", playSelectedFile, false);
-      })();
-    </script>
-        <script
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"
-      ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
     <script src="{{ url_for('static', filename='js/demo.js') }}"></script>
   </body>
 </html>
