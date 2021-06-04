@@ -29,7 +29,7 @@
     <!-- Browser Tab Icon -->
     <link
       rel="icon"
-      href="{{ url_for('static', filename='/image/favicon.ico') }}"
+      href="{{ url_for('static', filename='/image/favicon_black.jpg') }}"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="static/css/style.css" />
@@ -44,12 +44,11 @@
       <div class="container">
         <a href="../" class="navbar-brand">
           <img
-            src="../static/image/logo_icon3.svg"
+            src="../static/image/bw-logo-white.png"
             width="50"
             height="25"
             class="d-inline-block align-top"
             alt=""
-            style="filter: invert(100)"
           />
           BizzWatch</a
         >
@@ -78,11 +77,11 @@
                 ><i class="fas fa-table"></i> Project <span class="caret"></span
               ></a>
               <div class="dropdown-menu" aria-labelledby="themes">
-                <a class="dropdown-item" href="/global-emissions">Datasets</a>
-                <a class="dropdown-item" href="/global-charge-stations"
+                <a class="dropdown-item" href="..">Datasets</a>
+                <a class="dropdown-item" href=".."
                   >Challenges</a
                 >
-                <a class="dropdown-item" href="/race-chart"
+                <a class="dropdown-item" href=".."
                   >Future Improvements</a
                 >
               </div>
@@ -105,7 +104,7 @@
     <div
       class="jumbotron text-center"
       style="
-        background-image: url(../static/image/project_cover.jpg);
+        background-image: url(..);
         background-size: cover;
         background-repeat: no-repeat;
         height: 65vh;
@@ -244,7 +243,7 @@
           similique hic, voluptatem odio! Obcaecati minima aliquid nostrum.
         </p>
         <img
-          src="../static/image/fuel-price.jpg"
+          src=".."
           alt=""
           class="justify-content-center"
         />
@@ -253,7 +252,7 @@
       <div class="row">
         <div class="col-md-3">
           <img
-            src="../static/image/fuel-price.jpg"
+            src=".."
             alt=""
             class="img-fluid img-thumbnail"
           />
@@ -273,12 +272,12 @@
       <div class="row">
         <div class="col-md-3">
           <img
-            src="../static/image/ev_battery_capacity.jpg"
+            src=".."
             alt=""
             class="img-fluid"
           />
           <img
-            src="../static/image/falling_battery_price_chart.png"
+            src=".."
             alt=""
             class="img-fluid"
           />
@@ -307,7 +306,7 @@
       <div class="row">
         <div class="col-md-3">
           <img
-            src="../static/image/empty_tank.png"
+            src=".."
             alt=""
             class="img-fluid img-thumbnail"
           />
@@ -332,12 +331,12 @@
       <div class="row">
         <div class="col-md-3">
           <img
-            src="../static/image/tesla-charging.jpg"
+            src=".."
             alt=""
             class="img-fluid img-thumbnail"
           />
           <img
-            src="../static/image/ev-connector-types.jpg"
+            src=".."
             alt=""
             class="img-fluid img-thumbnail"
           />
@@ -349,7 +348,7 @@
       <div class="row">
         <div class="col-md-3">
           <img
-            src="../static/image/power-grid.jpg"
+            src=".."
             alt=""
             class="img-fluid img-thumbnail"
           />
@@ -389,7 +388,7 @@
         </p>
         <div>
           <img
-            src="../static/image/global.jpg"
+            src=".."
             style="height: 400"
             alt=""
             class="img-fluid img-thumbnail"
@@ -428,7 +427,5 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
-    <script src="{{ url_for('static', filename='js/random_stats.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/market_share.js') }}"></script>
   </body>
 </html>
