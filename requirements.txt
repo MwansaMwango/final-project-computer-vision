@@ -21,7 +21,6 @@ typing-extensions==3.10.0.0
 Werkzeug==2.0.1
 wincertstore==0.2
 zipp==3.4.1
-PIL==7.2.0
 -f https://download.pytorch.org/whl/torch_stable.html
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
