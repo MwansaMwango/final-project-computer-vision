@@ -42,23 +42,17 @@
   </head>
   <body>
     <!-- Navbar -->
-    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-      <!-- Go Back Arrow -->
-      <script>
-        function goBack() {
-          window.history.back();
-        }
-      </script>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:history.back()"
-            ><i class="fas fa-arrow-left"></i
-          ></a>
-        </li>
-      </ul>
-
+    <div
+      class="
+        navbar navbar-expand-lg
+        fixed-top
+        navbar-dark
+        bg-primary
+        flex-nowrap
+      "
+    >
       <div class="container">
-        <a href="../" class="navbar-brand">
+        <a href="/" class="navbar-brand">
           <img
             src="../static/image/bw-logo-white.png"
             width="50"
@@ -68,6 +62,58 @@
           />
           BizzWatch</a
         >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/demo"
+                ><i class="fas fa-tv"></i> Demo</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                id="themes"
+                ><i class="fas fa-table"></i> Project <span class="caret"></span
+              ></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+                <a
+                  class="dropdown-item"
+                  target="_blank"
+                  href="https://raw.githubusercontent.com/MwansaMwango/final-project/main/data/data.csv"
+                  >Dataset</a
+                >
+                <a
+                  class="dropdown-item"
+                  target="_blank"
+                  href="https://github.com/MwansaMwango/final-project/blob/main/data/randomForestRegressor.ipynb"
+                  >Notebook</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://github.com/MwansaMwango/final-project"
+                ><i class="fab fa-github-square"></i> Github</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <!-- End of Navbar -->
@@ -158,7 +204,7 @@
                 >
                 <input class="form-control" type="file" id="businessData" />
               </fieldset>
-              <a href="/api/detect">
+              <a href="">
                 <button id="detectBtn" type="submit" class="btn btn-primary">
                   Detect
                 </button>
@@ -320,34 +366,36 @@
 
           <div class="col-sm-12 col-md-6">
             <h4 class="text-primary">
-              Rationale: More people...means more sales!
+              Rationale: More people...means more sales?
             </h4>
             <p>
-              A video is essentially and ensemble of images or frames played
-              fast enough (24 images per second) to fool the eye into perceiving
-              it as motion. The same principle is applied for inference to count
+              A video is essentially an ensemble of images or frames played fast
+              enough (~24 frames per second) to fool the eye into perceiving it
+              as motion. The same principle is applied for inference to count
               the number of people in video.
             </p>
             <p>
               We do not need to check 24 images and count the number of people
               in period of 1 second! Therefore, we can skip some frames and only
-              count people say, every 10mins. This is more practical, compute
-              resource and memory efficient. Customer count over time can be
-              used to correlate busy or quiet hours, days or months.
+              count people say, every 10mins. This practical and ensures
+              efficient use of compute and memory resources. The sampling
+              interval can be tweaked according to application. Customer count
+              over time can be used to correlate busy or quiet hours, days or
+              months.
             </p>
             <p>
-              For the purpose of the demo and due to minimum compute resources,
-              the timeslot used is in seconds. This graph can be overlaid with
-              sales/revenue and investigate the correlation.
+              Revenue and count can be scaled to allow for easy comparison.
+              Discrepancies on days like Friday, Saturday and Sunday can be
+              flags for furter investigation.
             </p>
             <p>
               Generally, the more people you have in the barbershop, the more
-              haircuts and revenue expected! Deveiation's from this hypoethesis
+              haircuts and revenue expected! Deviations from this hypothesis
               would warrant further investigation.
             </p>
             <p>
               Luckily, we have timestamps for every frame and so we can easily
-              playback at that particular timestamp hence saving time.
+              playback at that particular timestamp and review the ground-truth.
             </p>
           </div>
         </div>
@@ -374,12 +422,12 @@
             </h4>
             <p>
               Due to lack of real data for this specific application, we have
-              taken a very similar dataset to which our analsis can be applied.
-              We take a case study dataset done to figure out the best time to
+              taken a very similar gym dataset and applied the analysis.
+              We take a case study dataset completed to help students figure out the best time to
               go to the gym from a dataset that includes the count of people in
-              the gym every 10mins. This data presents a reasonalble to
+              the gym every 10mins. This data presents a reasonable
               comparison to our count of people in a barbershop over time.
-              Additionally in includes more commonly used feature sets such:
+              Additionally, the gym dataset includes general features sets such:
             </p>
             <ul>
               <li>Day of Week</li>
@@ -392,16 +440,10 @@
               <li>Is during of semester</li>
             </ul>
             <p>
-              A feature correlation heatmap is presented to show how correlated
-              the features are. The label of interes here is the number of
-              peaple. As can be seen, with respect to number of people,
-              timestamp, temperature and during semester have a higher
-              correlation.
-            </p>
-            <p>
-              For the purpose of the demo and due to minimum compute resources,
-              the timeslot used is in seconds. This graph can be overlaid with
-              sales/revenue and investigate the correlation.
+              A feature correlation heatmap is presented to show how related
+              the features are. The label of interence here is the 'number_of
+              _people'. It is evident that timestamp, temperature and during semester have a higher
+              correlation or impact on the number of people who attend the gym.
             </p>
           </div>
         </div>
@@ -425,14 +467,14 @@
           <div class="col-sm-12 col-md-6">
             <h4 class="text-primary">Gym Case Study: Peak Times</h4>
             <p>
-              The data shows that the peak hours are 1700-19:00hrs during weekdays
-              with Monday and Tuesday having a 2hr lag with later start times
-              around 8am. Not many night owls. Average number of people is
+              The data shows that the peak hours are 1700-19:00hrs during
+              weekdays with Monday and Tuesday having a 2hr lag with later start
+              times around 8am. Not many night owls! Average number of people is
               around 30 at any point in time.
             </p>
             <p>
-              Similarly for our barbershop, this can be used to benchmark and
-              estimate customer surge, staffing and revenue expected.
+              Similarly for our barbershop example, this can be used to benchmark and
+              estimate customer surge, staffing and cashflow.
             </p>
           </div>
         </div>
@@ -525,7 +567,7 @@
               features would result in a more insightfull model other than
               people count. This will soon be the case with the rise of Internet
               of Things and sensors everywhere and in everthing. But the now,
-              this concept leverages the existing CCTV camera video footable
+              this concept leverages the existing CCTV camera video footage
               that is more widely available.
             </p>
             <p>
@@ -534,7 +576,8 @@
               retinanet_r101_fpn) to DETECT the number of customers in videos
               compared to received revenue or number of customers. Furthermore,
               PREDICTION of revenue using supervised machine learning random
-              forest regression model was developed for a case study with accuracy of 91%.
+              forest regression model was developed for a case study with
+              accuracy of 91%.
             </p>
           </div>
         </div>

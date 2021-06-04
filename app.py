@@ -19,7 +19,7 @@ def index():
 def demo():
     return render_template("demo.html")
 
-# Run detect
+# Run detector 
 @app.route("/api/detect", methods=['GET'])
 def api_detect():
     results = detectObj()
