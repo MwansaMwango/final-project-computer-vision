@@ -17,7 +17,6 @@ Pillow==8.2.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
 six==1.16.0
-https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
 torchvision==0.9.1
 typing-extensions==3.10.0.0
 Werkzeug==2.0.1
