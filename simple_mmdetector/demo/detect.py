@@ -55,7 +55,7 @@ def detectObj():
         imageFileName = frame["frameName"]
        
         with torch.no_grad():
-            result = retina.detect(imageFileName)
+            result = retina.detect('static/image/frames/'+imageFileName)
         res = []
 
         # Look for cars [2], person [0] in COCO dataset, with threshold between 0.3-0.5 depending on setting
