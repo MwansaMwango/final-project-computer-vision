@@ -130,3 +130,6 @@ dmypy.json
 
 # RetinaNet Model - >200MB too big to upload to gitbub
 retinanet_r101_fpn_1x_20181129-f016f384.pth
+
+#config
+config.js

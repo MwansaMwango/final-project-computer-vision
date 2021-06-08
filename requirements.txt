@@ -26,3 +26,4 @@ torch==1.8.1+cpu
 torchvision==0.9.1+cpu
 gunicorn
 opencv-python-headless==4.5.2.52
+cvlib==0.2.6
