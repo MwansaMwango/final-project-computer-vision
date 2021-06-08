@@ -52,8 +52,6 @@ tensorboard-plugin-wit==1.8.0
 tensorflow-cpu==2.5.0
 tensorflow-estimator==2.5.0
 termcolor==1.1.0
-torch==1.8.1+cpu
-torchvision==0.9.1+cpu
 typing-extensions==3.7.4.3
 urllib3==1.26.5
 Werkzeug==2.0.1
