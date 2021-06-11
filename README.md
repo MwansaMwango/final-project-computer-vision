@@ -11,11 +11,12 @@ CCTV has been the goto solution to prevent employee or internal theft. Business 
 ## Solution 
 BizzWatch is a solution that leverages computer vision and data analytics to detect, audit and predict revenue/customer demand.
 
-## Design
+## User Story
 Bizzwatch is design to allow user to upload a video with business rules/logic with options such as number of frames to skip and target class (e.g. person, car or bicycle) for object detection.
 The video is then split into frames / images that are fed into the pretrained model to perform detection. Thereafter, the detect button runs the inference / object detection. The results are displayed in a carousel of images showing inference bounding boxes and total count of objects. Additionally, sales/revenue vs. people count bar chart visualisation is generated according to the business rules/logic csv file data. 
 **Note**: File Upload and online inference has been disabled due to Heroku free-tier limitations. Also dummy data is used for MVP sales / revenue to demonstrate people count can be correlated to sales/revenue over time.
 
+## High Level Design
 ![High Level Design](hld.jpg)
 
 ## Technology Stack
