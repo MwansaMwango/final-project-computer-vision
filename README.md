@@ -31,7 +31,7 @@ BizzWatch is a solution that leverages computer vision and data analytics to det
 * OpenCV
 * Pytorch
 * Retinanet_r101_fpn
-* ResNet 101 backbone Neural Netowrk
+* ResNet 101 backbone Neural Network
 * Pretrained COCO Weights
 
 ## Benefits
@@ -40,14 +40,14 @@ BizzWatch is a solution that leverages computer vision and data analytics to det
 * Resource Optmisation - staff, goods and services
   
 ## Future Works
-* Cloud deployment - paid-tier, to allow upload of video and cloud inference
+* Cloud deployment - paid-tier, to allow upload of video and cloud inference. Current deployment on free-tier Heroku has limited compute and storage.
 * Human Pose Estimation to identify activity
 * Dwell Time - time object spends in a given user defined zone
-* Zone Region of Interest - specify exact
-* Video Stream - RTSP
+* Zone Region of Interest - specify exact areas of detection
+* Real Time Video Streaming Inference - RTSP enabled IP camera 
 
 ## Development Time
-* This project / minimum viable product was developed in an intense 2 Weeks before deadline of final bootcamp project.
+* This project / minimum viable product was developed in an intense **2 Weeks** before deadline of final bootcamp project.
 
 ## Author
 Mwansa Mwango
