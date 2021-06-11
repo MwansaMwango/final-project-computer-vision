@@ -1,6 +1,6 @@
 # BizzWatch
 An app that analyses camera/video footage to audit business revenue and customers behaviour.
-![Project Cover](objdet.jpg)
+![Project Cover](app_screenshot.png)
 
 ## Deployment
 Demo [Live_link](https://bizzwatch.herokuapp.com/)
