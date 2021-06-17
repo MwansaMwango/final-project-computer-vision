@@ -45,6 +45,7 @@ The video is then split into frames / images that are fed into the pretrained mo
 * Resource Optmisation - staff, goods and services
   
 ## Future Works
+* Use Streamlit for Front End
 * Cloud deployment - paid-tier, to allow upload of video and cloud inference. Current deployment on free-tier Heroku has limited compute and storage.
 * Human Pose Estimation to identify activity
 * Dwell Time - time object spends in a given user defined zone
